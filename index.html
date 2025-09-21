@@ -3,140 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación y computación 2º Bachillerato</title>
+    <title>Programación y Computación</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-            color: #1f2937;
-            padding: 2rem;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #4f46e5;
-        }
-        .subtitle {
-            font-size: 1.25rem;
-            color: #6b7280;
-        }
-        .grid-container {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-        }
-        @media (min-width: 640px) {
-            .grid-container {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-        @media (min-width: 1024px) {
-            .grid-container {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-        .card {
-            background-color: #ffffff;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 0.75rem;
-        }
-        .card-description {
-            color: #6b7280;
-            margin-bottom: 1.5rem;
-        }
-        .card-link {
-            display: inline-block;
-            background-color: #4f46e5;
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-        .card-link:hover {
-            background-color: #4338ca;
-        }
-        .footer-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #e5e7eb;
-            z-index: 100;
-            padding: 1rem 2rem;
-            text-align: center;
-            font-size: 0.875rem;
-            color: #6b7280;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">    
 </head>
-<body>
+<body class="bg-gray-100">
 
-    <div class="container">
-        <header class="header">
-            <h1 class="text-3xl sm:text-4xl">Programación y Computación 2º Bachillerato</h1>
-            <p class="subtitle mt-2">Recursos y tutoriales para el curso</p>
-        </header>
+    <main class="container">
+        <h1 class="text-4xl font-bold mb-6 text-center">Programación y Computación 2º de Bachillerato</h1>
+        <p class="text-center text-lg text-gray-600 mb-12">Recursos de la asignatura.</p>
+        
+        <div class="card-grid">
+            <a href="procesosolucionproblemas.html" class="card">
+                <h2>El proceso de solución de problemas</h2>
+                <p>Entender cómo pensar de forma lógica y computacional antes de empezar a programar.</p>
+            </a>
+            
+            <a href="#" class="card">
+                <h2>Próximamente...</h2>
+                <p>Algoritmos en pseudocódigo</p>
+            </a>
+            
+            <a href="#" class="card">
+                <h2>Próximamente...</h2>
+                <p>Lenguajes de programación</p>
+            </a>
+        </div>
+    </main>
 
-        <main class="grid-container">
-
-            <!-- Tutorial 1: El Proceso de Solución de Problemas -->
-            <div class="card">
-                <div>
-                    <h2 class="card-title">El proceso de solución de problemas</h2>
-                    <p class="card-description">Entender cómo pensar de forma lógica y computacional antes de empezar a programar.</p>
-                </div>
-                <a href="procesosolucionproblemas.html" class="card-link text-center">Ver</a>
-            </div>
-
-            <!-- Puedes añadir más tarjetas aquí a medida que crees más contenido -->
-            <div class="card">
-                <div>
-                    <h2 class="card-title">Introducción al pseudocódigo</h2>
-                    <p class="card-description">Ejercicios y conceptos básicos para familiarizarse con la algoritmia y la lógica de programación.</p>
-                </div>
-                <a href="#" class="card-link text-center">Próximamente</a>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h2 class="card-title">Conceptos de programación</h2>
-                    <p class="card-description">Variables, tipos de datos, estructuras de control y más para entender los fundamentos del código.</p>
-                </div>
-                <a href="#" class="card-link text-center">Próximamente</a>
-            </div>
-
-        </main>
-    </div>
     <footer class="footer-bar">
         <p>Alba Fernández | IES Columela</p>
     </footer>
