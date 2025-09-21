@@ -35,6 +35,7 @@
             border-radius: 1.5rem;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             max-width: 90%;
+            width: 50rem; /* Ancho fijo para todas las tarjetas en pantallas grandes */
             padding: 2.5rem;
             display: flex;
             flex-direction: column;
@@ -42,6 +43,14 @@
             flex-grow: 1;
             justify-content: center;
         }
+
+        /* Responsive para dispositivos móviles */
+        @media (max-width: 768px) {
+            .slide-card {
+                width: 90%; /* Ajuste para móviles para evitar el desbordamiento */
+            }
+        }
+        
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -165,7 +174,7 @@
         <div class="slide bg-blue-100/50">
             <div class="slide-card">
                 <h2>Las 4 partes del proceso</h2>
-                <ul class="w-full max-w-xl mx-auto">
+                <ul class="w-full mx-auto">
                     <li class="flex-row-center"><div class="list-number">1</div><p class="text-content">**Define:** ¿Cuál es el problema real que necesitamos solucionar?</p></li>
                     <li class="flex-row-center"><div class="list-number">2</div><p class="text-content">**Prepárate:** ¿Qué han intentado otras personas? ¿Qué ideas nuevas se nos ocurren?</p></li>
                     <li class="flex-row-center"><div class="list-number">3</div><p class="text-content">**Intenta (Try):** Pon en marcha un plan y comprueba si funciona.</p></li>
@@ -180,7 +189,7 @@
             <div class="slide-card">
                 <h2 class="text-blue-700">Paso 1: Define (El caso de Zipline y la sangre)</h2>
                 <p class="mt-4 text-center">El problema es **hacer llegar productos médicos vitales a lugares remotos de forma rápida**.</p>
-                <ul class="w-full max-w-md mx-auto">
+                <ul class="w-full mx-auto">
                     <li class="flex-row-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 009-9H3a9 9 0 009 9z" /></svg><p class="text-content"><span class="font-bold">Urgencia:</span> La gente que necesita sangre la necesita rápido.</p></li>
                     <li class="flex-row-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5h.008v.008H15z" /></svg><p class="text-content"><span class="font-bold">Almacenamiento:</span> La sangre es difícil de almacenar, tiene muchos tipos y caduca muy rápido.</p></li>
                     <li class="flex-row-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.5l3.5 3.5m0 0l3.5-3.5m-3.5 3.5V3M21 10.5h-3.5m0 0h-3.5m3.5 0V21" /></svg><p class="text-content"><span class="font-bold">Logística:</span> En muchas zonas rurales no hay carreteras fiables.</p></li>
@@ -192,7 +201,7 @@
         <div class="slide bg-gray-100">
             <div class="slide-card">
                 <h2 class="text-blue-700">Paso 2: Prepárate (Investigación e innovación)</h2>
-                <ul class="w-full max-w-md mx-auto">
+                <ul class="w-full mx-auto">
                     <li class="flex-row-center"><p class="text-content"><span class="font-bold">Investigación:</span> Hablaron con médicos y personas en el campo.</p></li>
                     <li class="flex-row-center"><p class="text-content"><span class="font-bold">Descubrimiento clave:</span> Almacenar la sangre en un solo lugar sería ideal si pudieran transportarla rápidamente.</p></li>
                     <li class="flex-row-center"><p class="text-content"><span class="font-bold">Lluvia de ideas:</span> Dejaron volar la imaginación sin limitarse.</p></li>
@@ -205,7 +214,7 @@
         <div class="slide bg-gray-100">
             <div class="slide-card">
                 <h2 class="text-indigo-700">Paso 3: Intenta (Acción, éxito y fracaso)</h2>
-                <ul class="w-full max-w-md mx-auto">
+                <ul class="w-full mx-auto">
                     <li class="flex-row-center"><p class="text-content"><span class="font-bold">Implementación:</span> Construyeron un almacén central y muchos drones, y los probaron una y otra vez.</p></li>
                     <li class="flex-row-center"><p class="text-content"><span class="font-bold">Resultados:</span> Tuvieron **éxitos** (soltar la sangre funcionaba) y muchos **fracasos** (problemas con el clima y el hardware).</p></li>
                     <li class="flex-row-center"><p class="text-content"><span class="font-bold">Conclusión:</span> No siempre acertamos a la primera. Los fracasos son oportunidades para **aprender y mejorar**.</p></li>
@@ -218,7 +227,7 @@
             <div class="slide-card">
                 <h2 class="text-gray-700">Paso 4: Reflexiona (Revisar y mejorar)</h2>
                 <p class="mt-4 text-center">Una vez que el plan funcionó, reflexionaron sobre cómo hacerlo mejor y cómo aplicar la solución a otros problemas.</p>
-                <ul class="w-full max-w-md mx-auto">
+                <ul class="w-full mx-auto">
                     <li class="flex-row-center"><p class="text-content"><span class="font-bold">Evaluación:</span> ¿Hemos solucionado el problema original?</p></li>
                     <li class="flex-row-center"><p class="text-content"><span class="font-bold">Expansión de la idea:</span> ¿Podría usarse para entregar medicinas, órganos o incluso recoger artículos?</p></li>
                 </ul>
@@ -231,7 +240,7 @@
             <div class="slide-card">
                 <h2 class="text-blue-700">¡Puedes solucionar cualquier cosa!</h2>
                 <p class="mt-4 text-center">Este proceso no es solo para programadoras/es. Funciona en cualquier área:</p>
-                <ul class="w-full max-w-md mx-auto text-lg space-y-4 mt-6">
+                <ul class="w-full mx-auto text-lg space-y-4 mt-6">
                     <li class="flex-row-center">✨ <p class="text-content"><span class="font-bold">Creativa:</span> ¿Cómo escribir un relato?</p></li>
                     <li class="flex-row-center">📅 <p class="text-content"><span class="font-bold">Personal:</span> ¿Cómo organizar mi horario de estudio?</p></li>
                     <li class="flex-row-center">🤔 <p class="text-content"><span class="font-bold">Existencial:</span> ¿Qué carrera elegir?</p></li>
