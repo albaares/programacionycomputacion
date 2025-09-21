@@ -3,253 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Proceso de Solución de Problemas</title>
+    <title>El proceso de solución de problemas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #e5e7eb;
-        }
-        .presentation-container {
-            /* Usamos snap para un efecto de diapositivas que se deslizan */
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            height: 100vh;
-        }
-        .slide {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 2rem;
-            text-align: center;
-            scroll-snap-align: start;
-        }
-        /* Estilos de las tarjetas de diapositiva */
-        .slide-card {
-            background: #ffffff;
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            max-width: 90%;
-            width: 50rem; /* Ancho fijo para todas las tarjetas en pantallas grandes */
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            flex-grow: 1;
-            justify-content: center;
-        }
-
-        /* Responsive para dispositivos móviles */
-        @media (max-width: 768px) {
-            .slide-card {
-                width: 90%; /* Ajuste para móviles para evitar el desbordamiento */
-            }
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #1f2937;
-            text-balance: balance;
-        }
-        h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #374151;
-            text-balance: balance;
-        }
-        p, li {
-            font-size: 1.125rem;
-            color: #4b5563;
-            line-height: 1.75;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        li {
-            display: flex;
-            align-items: center;
-            text-align: left;
-        }
-        /* Estilos para los números de lista */
-        .list-number {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #ffffff;
-            background-color: #4f46e5;
-            min-width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 1rem;
-        }
-        .flex-row-center {
-            display: flex;
-            align-items: center;
-        }
-        .icon {
-            width: 1.5rem;
-            height: 1.5rem;
-            color: #4f46e5;
-            margin-right: 0.75rem;
-        }
-        .text-content {
-            flex-grow: 1;
-        }
-        @media (min-width: 768px) {
-            h1 { font-size: 3rem; }
-            h2 { font-size: 2rem; }
-            .slide-card { max-width: 60rem; }
-        }
-
-        .header-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            z-index: 100;
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-bar a {
-            font-weight: 600;
-            color: #4f46e5;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .header-bar a:hover {
-            color: #4338ca;
-        }
-
-        .footer-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #e5e7eb;
-            z-index: 100;
-            padding: 1rem 2rem;
-            text-align: center;
-            font-size: 0.875rem;
-            color: #6b7280;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
+    
 </head>
 <body class="bg-gray-100">
 
-    <div class="header-bar">
-        <a href="index.html">← Volver a inicio</a>
-    </div>
+    <main class="container">
+        <a href="index.html" class="back-button">← Volver al inicio</a>
 
-    <div class="presentation-container">
+        <h1 class="text-4xl font-bold mb-6 text-center">El proceso de solución de problemas</h1>
 
-        <!-- Diapositiva 1: Introducción -->
-        <div class="slide bg-indigo-100/50">
-            <div class="slide-card">
-                <h1 class="text-indigo-800">El proceso de solución de problemas</h1>
-                <h2 class="text-indigo-600">Un enfoque para pensar como programadoras/es</h2>
-                <p class="mt-4 text-center">Hola a todas y todos, soy vuestra profesora de Programación y Computación. En esta asignatura, vamos a aprender a **crear software** para solucionar problemas. Pero antes de escribir una sola línea de código, debemos entender **cómo pensar** para resolver problemas de manera efectiva. Esto es el **pensamiento computacional**.</p>
-                <p class="mt-4 text-center font-bold text-gray-700">El proceso para solucionar problemas es una serie de pasos que nos ayudan a abordar cualquier desafío.</p>
-            </div>
+        <!-- Introducción: Zipline y la necesidad de un proceso -->
+        <div class="diapositiva">                     
+            <p>Todas las personas solucionamos problemas diariamente, pero existe una serie de pasos que se pueden tomar para solucionar cualquier problema. esto se llama el proceso para solucionar problemas.</p>
         </div>
 
-        <!-- Diapositiva 2: Los 4 pasos -->
-        <div class="slide bg-blue-100/50">
-            <div class="slide-card">
-                <h2>Las 4 partes del proceso</h2>
-                <ul class="w-full mx-auto">
-                    <li class="flex-row-center"><div class="list-number">1</div><p class="text-content">**Define:** ¿Cuál es el problema real que necesitamos solucionar?</p></li>
-                    <li class="flex-row-center"><div class="list-number">2</div><p class="text-content">**Prepárate:** ¿Qué han intentado otras personas? ¿Qué ideas nuevas se nos ocurren?</p></li>
-                    <li class="flex-row-center"><div class="list-number">3</div><p class="text-content">**Intenta (Try):** Pon en marcha un plan y comprueba si funciona.</p></li>
-                    <li class="flex-row-center"><div class="list-number">4</div><p class="text-content">**Reflexiona (Reflect):** Revisa lo que ha funcionado y lo que no, y piensa cómo podrías mejorar.</p></li>
-                </ul>
-                <p class="mt-4 text-center">Ahora, veamos cómo estos pasos se aplican en el mundo real con el increíble ejemplo de Zipline.</p>
-            </div>
+        <!-- Los 4 pasos del proceso -->
+        <div class="diapositiva">
+            <h2 class="text-4xl font-bold mb-6 text-center">Los 4 pasos del proceso</h2>
+            <h3>Las 4 partes básicas del proceso de solución de problemas</h3>
+            <p>El proceso tiene 4 partes básicas:</p>
+            <ul>
+                <li><strong>Define:</strong> identifica el problema.</li>
+                <li><strong>Prepárate:</strong> investiga soluciones anteriores y crea unas nuevas.</li>
+                <li><strong>Intenta (try):</strong> pon en acción un plan y prueba si funciona.</li>
+                <li><strong>Reflexiona (reflect):</strong> revisa lo que funcionó y lo que no, y cómo crees que podrías cambiar tu enfoque en el futuro.</li>
+            </ul>
+            <p>Ahora, veamos cómo este proceso se utiliza en el mundo real.</p>
         </div>
 
-        <!-- Diapositiva 3: Paso 1 Define (Zipline) -->
-        <div class="slide bg-gray-100">
-            <div class="slide-card">
-                <h2 class="text-blue-700">Paso 1: Define (El caso de Zipline y la sangre)</h2>
-                <p class="mt-4 text-center">El problema es **hacer llegar productos médicos vitales a lugares remotos de forma rápida**.</p>
-                <ul class="w-full mx-auto">
-                    <li class="flex-row-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 009-9H3a9 9 0 009 9z" /></svg><p class="text-content"><span class="font-bold">Urgencia:</span> La gente que necesita sangre la necesita rápido.</p></li>
-                    <li class="flex-row-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5h.008v.008H15z" /></svg><p class="text-content"><span class="font-bold">Almacenamiento:</span> La sangre es difícil de almacenar, tiene muchos tipos y caduca muy rápido.</p></li>
-                    <li class="flex-row-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="icon"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.5l3.5 3.5m0 0l3.5-3.5m-3.5 3.5V3M21 10.5h-3.5m0 0h-3.5m3.5 0V21" /></svg><p class="text-content"><span class="font-bold">Logística:</span> En muchas zonas rurales no hay carreteras fiables.</p></li>
-                </ul>
-            </div>
+        <!-- Paso 1: Definir el problema (el caso de la sangre) -->
+        <div class="diapositiva">
+            <h2 class="mb-4">Paso 1: definir el problema (el caso de la sangre)</h2>
+            <h3>Título: paso 1: definir (identificar la necesidad)</h3>
+            <p>En Zipline, el proceso comenzó definiendo el problema. Se identificaron tres desafíos principales:</p>
+            <ul>
+                <li><strong>Urgencia:</strong> cuando la gente necesita sangre, la necesitan rápido.</li>
+                <li><strong>Almacenamiento:</strong> la sangre es muy difícil de almacenar porque existen muchos tipos y expira rápidamente.</li>
+                <li><strong>Logística:</strong> la mayoría del mundo no tiene vías confiables para las entregas.</li>
+            </ul>
         </div>
 
-        <!-- Diapositiva 4: Paso 2 Prepárate -->
-        <div class="slide bg-gray-100">
-            <div class="slide-card">
-                <h2 class="text-blue-700">Paso 2: Prepárate (Investigación e innovación)</h2>
-                <ul class="w-full mx-auto">
-                    <li class="flex-row-center"><p class="text-content"><span class="font-bold">Investigación:</span> Hablaron con médicos y personas en el campo.</p></li>
-                    <li class="flex-row-center"><p class="text-content"><span class="font-bold">Descubrimiento clave:</span> Almacenar la sangre en un solo lugar sería ideal si pudieran transportarla rápidamente.</p></li>
-                    <li class="flex-row-center"><p class="text-content"><span class="font-bold">Lluvia de ideas:</span> Dejaron volar la imaginación sin limitarse.</p></li>
-                    <li class="flex-row-center"><p class="text-content"><span class="font-bold">Solución elegida:</span> Un **dron no tripulado** que volara rápido y soltara la carga con un paracaídas.</p></li>
-                </ul>
-            </div>
+        <!-- Paso 2: Prepararse (investigación e innovación) -->
+        <div class="diapositiva">
+            <h2 class="mb-4">Paso 2: prepararse (investigación e innovación)</h2>
+            <h3>Título: paso 2: prepárate (investiga y crea soluciones)</h3>
+            <p><strong>Investigación:</strong> primero, Zipline viajó a África y se reunió con doctores y gente en el campo, quienes estaban familiarizados con estos problemas.</p>
+            <p><strong>Descubrimiento clave:</strong> aprendieron que almacenar la sangre en un solo lugar realmente ayudaría, si solo pudieran obtener la sangre de ese lugar a los hospitales lejanos.</p>
+            <p><strong>Lluvia de ideas:</strong> dejaron su imaginación volar y se les ocurrió todo tipo de ideas.</p>
+            <p><strong>Solución elegida:</strong> un dron no tripulado que pudiera volar realmente lejos, muy rápido, sobre todo tipo de terrenos difíciles.</p>
+            <p><strong>Mecanismo:</strong> volaría sobre el destino y soltaría un paracaídas con un paquete de sangre para los doctores en el suelo, y luego volvería a casa.</p>
         </div>
 
-        <!-- Diapositiva 5: Paso 3 Intenta -->
-        <div class="slide bg-gray-100">
-            <div class="slide-card">
-                <h2 class="text-indigo-700">Paso 3: Intenta (Acción, éxito y fracaso)</h2>
-                <ul class="w-full mx-auto">
-                    <li class="flex-row-center"><p class="text-content"><span class="font-bold">Implementación:</span> Construyeron un almacén central y muchos drones, y los probaron una y otra vez.</p></li>
-                    <li class="flex-row-center"><p class="text-content"><span class="font-bold">Resultados:</span> Tuvieron **éxitos** (soltar la sangre funcionaba) y muchos **fracasos** (problemas con el clima y el hardware).</p></li>
-                    <li class="flex-row-center"><p class="text-content"><span class="font-bold">Conclusión:</span> No siempre acertamos a la primera. Los fracasos son oportunidades para **aprender y mejorar**.</p></li>
-                </ul>
-            </div>
+        <!-- Paso 3: Intentar (acción, éxito y fracaso) -->
+        <div class="diapositiva">
+            <h2 class="mb-4">Paso 3: intentar (acción, éxito y fracaso)</h2>
+            <h3>Título: paso 3: intenta (poner el plan en acción)</h3>
+            <p><strong>Implementación:</strong></p>
+            <ul>
+                <li>Utilizaron investigaciones médicas previas para construir una instalación de almacenamiento de sangre en una locación central, permitiendo la entrega a casi cualquier lugar del país.</li>
+                <li>Construyeron muchos drones.</li>
+                <li>Probaron cómo volar los drones, darles la vuelta y recuperarlos.</li>
+            </ul>
+            <p><strong>Resultados:</strong> al intentarlo, tuvieron éxitos y muchos fracasos.</p>
+            <ul>
+                <li><strong>Éxito:</strong> aprendieron rápido que dejar caer la sangre del cielo funcionaba realmente bien.</li>
+                <li><strong>Fracaso/problemas:</strong> el clima y las fallas del hardware podían demorarlos mucho.</li>
+            </ul>
+            <p><strong>Ciclo de mejora:</strong> como lo intentaron, tuvieron que volver y preparar nuevas soluciones, redefiniendo nuevos problemas.</p>
         </div>
 
-        <!-- Diapositiva 6: Paso 4 Reflexiona -->
-        <div class="slide bg-gray-100">
-            <div class="slide-card">
-                <h2 class="text-gray-700">Paso 4: Reflexiona (Revisar y mejorar)</h2>
-                <p class="mt-4 text-center">Una vez que el plan funcionó, reflexionaron sobre cómo hacerlo mejor y cómo aplicar la solución a otros problemas.</p>
-                <ul class="w-full mx-auto">
-                    <li class="flex-row-center"><p class="text-content"><span class="font-bold">Evaluación:</span> ¿Hemos solucionado el problema original?</p></li>
-                    <li class="flex-row-center"><p class="text-content"><span class="font-bold">Expansión de la idea:</span> ¿Podría usarse para entregar medicinas, órganos o incluso recoger artículos?</p></li>
-                </ul>
-                <p class="mt-4 text-center font-bold text-gray-700">Para cada nueva pregunta, volvieron a **definir** el problema y a iniciar el proceso de nuevo.</p>
-            </div>
+        <!-- Paso 4: Reflexionar (mejora continua y nuevas aplicaciones) -->
+        <div class="diapositiva">
+            <h2 class="mb-4">Paso 4: reflexionar (mejora continua y nuevas aplicaciones)</h2>
+            <h3>Título: paso 4: reflexiona (revisar y mejorar)</h3>
+            <p>Una vez que tenían algo que funcionaba, era el momento de reflexionar sobre cómo había ido.</p>
+            <p><strong>Evaluación:</strong> reflexionaron sobre la definición original del problema y se preguntaron si su solución era mejor o peor que la que existía antes.</p>
+            <p><strong>Expansión:</strong> empezaron a pensar cómo esta solución podría abordar otros problemas:</p>
+            <ul>
+                <li>¿Podría funcionar para entregar medicinas o incluso órganos?</li>
+                <li>¿Podría funcionar a la inversa, recogiendo artículos de lugares distantes?</li>
+                <li>¿Podrían conseguir que esta solución funcionara en otros países?</li>
+            </ul>
+            <p>Para cada una de estas nuevas preguntas, volvieron a redefinir sus procesos y lo hicieron mejor.</p>
         </div>
 
-        <!-- Diapositiva 7: Conclusión -->
-        <div class="slide bg-gray-100">
-            <div class="slide-card">
-                <h2 class="text-blue-700">¡Puedes solucionar cualquier cosa!</h2>
-                <p class="mt-4 text-center">Este proceso no es solo para programadoras/es. Funciona en cualquier área:</p>
-                <ul class="w-full mx-auto text-lg space-y-4 mt-6">
-                    <li class="flex-row-center">✨ <p class="text-content"><span class="font-bold">Creativa:</span> ¿Cómo escribir un relato?</p></li>
-                    <li class="flex-row-center">📅 <p class="text-content"><span class="font-bold">Personal:</span> ¿Cómo organizar mi horario de estudio?</p></li>
-                    <li class="flex-row-center">🤔 <p class="text-content"><span class="font-bold">Existencial:</span> ¿Qué carrera elegir?</p></li>
-                </ul>
-                <p class="mt-8 text-center font-bold text-gray-700">En nuestra asignatura, vamos a usar estos cuatro pasos para convertir ideas en programas informáticos. ¡Empecemos!</p>
-            </div>
+        <!-- Conclusión: la utilidad universal del proceso -->
+        <div class="diapositiva">
+            <h2 class="mb-4">Conclusión: la utilidad universal del proceso</h2>
+            <h3>Título: ¡puedes solucionar cualquier cosa!</h3>
+            <p>El proceso de solución de problemas funciona en todo tipo de áreas:</p>
+            <ul>
+                <li>Creativo</li>
+                <li>Personal</li>
+                <li>Existencial</li>
+                <li>¡Lo que tú quieras!</li>
+            </ul>
+            <p>Al utilizar estos cuatro pasos (define, prepárate, intenta, reflexiona), puedes averiguar un proceso para hacer que cualquier cosa funcione.</p>
         </div>
-
-    </div>
+    </main>
 
     <footer class="footer-bar">
         <p>Alba Fernández | IES Columela</p>
