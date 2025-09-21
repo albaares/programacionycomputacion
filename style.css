@@ -59,6 +59,8 @@
         font-weight: 700;
         color: #E1077C;
         text-balance: balance;
+        text-align: center;
+        margin-bottom: 2rem;
     }
 
     h2 {
@@ -71,4 +73,47 @@
     p {
         font-size: 1rem;
         color: #6b7280;
+    }
+
+    .diapositiva {
+        background-color: #ffffff;
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 0.5rem;
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 0.5rem;
+    }
+
+    p, li {
+        font-size: 1rem;
+        color: #6b7280;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .back-button {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: #E1077C;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .back-button:hover {
+        color: #c00569;
     }
