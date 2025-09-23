@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a la Programación Informática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            --highlight-color: #E1077C;
+            background-color: #f9fafb;
+        }
+        .highlight {
+            color: var(--highlight-color);
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 4rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+        .active-slide {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            z-index: 10;
+        }
+        .nav-button {
+            background-color: white;
+            border: 2px solid var(--highlight-color);
+            color: var(--highlight-color);
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: var(--highlight-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        code.inline-code {
+            background-color: #e5e7eb;
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+        pre.code-block {
+            background-color: #1f2937;
+            color: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        blockquote {
+            border-left: 4px solid var(--highlight-color);
+            padding-left: 1.5rem;
+            font-style: italic;
+            color: #6b7280;
+            margin: 2rem 0;
+        }
+        ul, ol {
+            text-align: left;
+            display: inline-block;
+            max-width: 800px;
+        }
+        li {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-hidden">
+
+    <div id="presentation-container" class="relative w-screen h-screen">
+
+        <!-- Diapositiva 1: Título -->
+        <div class="slide active-slide">
+            <h1 class="text-6xl font-bold mb-4 highlight">Introducción a la programación informática</h1>
+            <p class="text-2xl text-gray-500 font-light">Un viaje desde la teoría hasta los lenguajes modernos</p>
+        </div>
+
+        <!-- Diapositiva 2: ¿Qué es programar? -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-10">¿Qué es <strong class="highlight">programar</strong>?</h2>
+            <ul class="space-y-6 text-2xl font-light list-disc list-inside">
+                <li>Es el proceso de <strong class="highlight">darle instrucciones a una máquina</strong> para que realice una tarea.</li>
+                <li>Pensemos en ordenadores, tablets o móviles: todos funcionan gracias a un programa.</li>
+                <li>Nosotros, los <strong class="highlight">programadores</strong>, somos los que escribimos esas instrucciones.</li>
+            </ul>
+        </div>
+        
+        <!-- Diapositiva 3: Orígenes -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-10">Los orígenes: <strong class="highlight">de la teoría a la práctica</strong></h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl">
+                <div class="text-left p-6">
+                    <h3 class="text-3xl font-semibold mb-4 highlight">La máquina de Turing (1936)</h3>
+                    <ul class="list-disc list-inside space-y-3 text-xl font-light">
+                        <li>Ideada por el matemático <strong class="highlight">Alan Turing</strong>.</li>
+                        <li>Fue un <strong class="highlight">concepto teórico</strong> que describía cómo una máquina podía seguir instrucciones lógicas.</li>
+                        <li>Es considerada la <strong class="highlight">base de la informática moderna</strong>.</li>
+                    </ul>
+                </div>
+                <div class="text-left p-6">
+                    <h3 class="text-3xl font-semibold mb-4 highlight">La ENIAC (1946)</h3>
+                    <ul class="list-disc list-inside space-y-3 text-xl font-light">
+                        <li>El <strong class="highlight">primer ordenador digital</strong> de uso general.</li>
+                        <li>Ocupaba una sala entera y pesaba toneladas.</li>
+                        <li><strong class="highlight">Programación manual</strong>: se hacía conectando cables y ajustando interruptores.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 4: Lenguaje Máquina -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-6">El <strong class="highlight">lenguaje de las máquinas</strong></h2>
+            <ul class="space-y-4 text-2xl mb-8 font-light list-disc list-inside">
+                <li>Los primeros ordenadores solo entendían <strong class="highlight">lenguaje máquina</strong>.</li>
+                <li>Compuesto por secuencias de <strong class="highlight">unos y ceros</strong> (binario).</li>
+                <li>Cada secuencia era una <strong class="highlight">instrucción directa</strong> para el hardware.</li>
+            </ul>
+             <blockquote>Imagina escribir una historia, pero en lugar de palabras, solo puedes usar secuencias como <code class="inline-code">01001000 01101111 01101100 01100001</code>.</blockquote>
+        </div>
+
+        <!-- Diapositiva 5: ¿Cómo era programar? -->
+        <div class="slide">
+             <h2 class="text-5xl font-bold mb-10">¿Cómo era <strong class="highlight">programar así</strong>?</h2>
+             <div class="flex space-x-8 text-2xl font-light">
+                <div class="bg-white p-8 rounded-lg shadow-md">Era <strong class="highlight">extremadamente complejo</strong> y laborioso.</div>
+                <div class="bg-white p-8 rounded-lg shadow-md">Requería un <strong class="highlight">conocimiento profundo</strong> del hardware.</div>
+                <div class="bg-white p-8 rounded-lg shadow-md">Era <strong class="highlight">muy fácil</strong> cometer errores.</div>
+             </div>
+        </div>
+        
+        <!-- Diapositiva 6: Evolución -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-10">La evolución: hacia un <strong class="highlight">lenguaje más humano</strong></h2>
+             <p class="text-2xl font-light mb-8 max-w-4xl">A medida que los ordenadores avanzaban, se buscaron formas más sencillas y eficientes de programar. Así nacieron dos herramientas clave:</p>
+            <ol class="text-3xl font-semibold list-decimal list-inside space-y-4">
+                <li>El <strong class="highlight">pseudocódigo</strong></li>
+                <li>Los <strong class="highlight">lenguajes de alto nivel</strong></li>
+            </ol>
+        </div>
+
+        <!-- Diapositiva 7: Pseudocódigo -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-6">Pseudocódigo: el <strong class="highlight">boceto del programador</strong></h2>
+            <ul class="space-y-4 text-2xl mb-8 font-light list-disc list-inside">
+                 <li>Describe los pasos de un programa usando un <strong class="highlight">lenguaje simple</strong>.</li>
+                 <li><strong class="highlight">No es un lenguaje de programación real</strong>, no se puede ejecutar.</li>
+                 <li>Su objetivo es <strong class="highlight">ayudar a organizar las ideas</strong> antes de escribir código.</li>
+            </ul>
+        </div>
+        
+        <!-- Diapositiva 8: Ejemplo Pseudocódigo -->
+        <div class="slide">
+            <h3 class="text-4xl font-bold mb-8">Ejemplo de <strong class="highlight">pseudocódigo</strong></h3>
+            <p class="text-xl mb-4 font-light">Para un programa que suma dos números:</p>
+            <pre class="code-block"><code>1. Inicio
+2. Pedir al usuario que ingrese el primer número y guardarlo en 'numero1'
+3. Pedir al usuario que ingrese el segundo número y guardarlo en 'numero2'
+4. Calcular la suma: 'resultado' = 'numero1' + 'numero2'
+5. Mostrar 'resultado' en la pantalla
+6. Fin</code></pre>
+        </div>
+        
+        <!-- Diapositiva 9: Lenguajes de Alto Nivel -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-10">Los <strong class="highlight">lenguajes de alto nivel</strong></h2>
+            <ul class="space-y-5 text-2xl font-light list-disc list-inside max-w-4xl">
+                 <li>Sintaxis <strong class="highlight">más cercana al lenguaje humano</strong>.</li>
+                 <li>Usan palabras que podemos entender: <code class="inline-code">if</code> (si), <code class="inline-code">while</code> (mientras), <code class="inline-code">print</code> (imprimir).</li>
+                 <li>Un <strong class="highlight">compilador o intérprete</strong> se encarga de traducir nuestro código a lenguaje máquina.</li>
+            </ul>
+        </div>
+        
+        <!-- Diapositiva 10: Ventajas -->
+        <div class="slide">
+            <h3 class="text-4xl font-bold mb-10">Ventajas de los <strong class="highlight">lenguajes de alto nivel</strong></h3>
+            <div class="flex space-x-8 text-2xl font-light">
+                <div class="bg-white p-8 rounded-lg shadow-md">✔️ Más <strong class="highlight">fáciles de leer</strong> y escribir.</div>
+                <div class="bg-white p-8 rounded-lg shadow-md">🚀 <strong class="highlight">Más rápidos</strong> para desarrollar programas.</div>
+                <div class="bg-white p-8 rounded-lg shadow-md">🎯 Menos <strong class="highlight">propensos a errores</strong>.</div>
+            </div>
+        </div>
+
+        <!-- Diapositiva 11: Resumen -->
+        <div class="slide">
+             <h2 class="text-5xl font-bold mb-10">Resumen del <strong class="highlight">viaje</strong></h2>
+             <ol class="text-2xl font-light space-y-6 list-decimal list-inside">
+                <li><strong class="highlight">Máquina de Turing:</strong> la idea fundamental.</li>
+                <li><strong class="highlight">ENIAC:</strong> la primera implementación física.</li>
+                <li><strong class="highlight">Lenguaje máquina:</strong> la comunicación directa con el hardware (1s y 0s).</li>
+                <li><strong class="highlight">Pseudocódigo:</strong> el plan o boceto de nuestro programa.</li>
+                <li><strong class="highlight">Lenguajes de alto nivel:</strong> la forma moderna de comunicarnos con las máquinas.</li>
+             </ol>
+        </div>
+        
+        <!-- Diapositiva 12: Preguntas -->
+        <div class="slide">
+             <h2 class="text-6xl font-bold highlight">¿Preguntas?</h2>
+        </div>
+
+    </div>
+
+    <!-- Navegación -->
+    <div class="fixed bottom-8 w-full flex justify-center items-center space-x-6 z-20">
+        <button id="prevBtn" class="nav-button font-bold py-2 px-6 rounded-full shadow-lg">Anterior</button>
+        <div id="slide-counter" class="text-sm text-gray-500 w-20 text-center"></div>
+        <button id="nextBtn" class="nav-button font-bold py-2 px-6 rounded-full shadow-lg">Siguiente</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slideCounter = document.getElementById('slide-counter');
+            let currentSlide = 0;
+
+            function showSlide(n) {
+                // Ocultar la diapositiva actual
+                slides[currentSlide].classList.remove('active-slide');
+                
+                // Calcular el nuevo índice
+                currentSlide = (n + slides.length) % slides.length;
+                
+                // Mostrar la nueva diapositiva
+                slides[currentSlide].classList.add('active-slide');
+
+                // Actualizar contador
+                slideCounter.textContent = `${currentSlide + 1} / ${slides.length}`;
+            }
+
+            // Event Listeners para los botones
+            prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+            
+            // Event Listeners para el teclado
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    showSlide(currentSlide + 1);
+                } else if (e.key === 'ArrowLeft') {
+                    showSlide(currentSlide - 1);
+                }
+            });
+
+            // Iniciar la presentación
+            showSlide(0);
+        });
+    </script>
+
+</body>
+</html>
