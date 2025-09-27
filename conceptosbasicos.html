@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos Clave de la Programación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            --highlight-color: #E1077C;
+            background-color: #f9fafb;
+        }
+        .highlight {
+            color: var(--highlight-color);
+        }
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 4rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+        .active-slide {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            z-index: 10;
+        }
+        .nav-button {
+            background-color: white;
+            border: 2px solid var(--highlight-color);
+            color: var(--highlight-color);
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: var(--highlight-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        code.inline-code {
+            background-color: #e5e7eb;
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+        pre.code-block {
+            background-color: #1f2937;
+            color: #f3f4f6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: left;
+            width: 100%;
+            max-width: 600px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        blockquote {
+            border-left: 4px solid var(--highlight-color);
+            padding-left: 1.5rem;
+            font-style: italic;
+            color: #6b7280;
+            margin: 2rem 0;
+        }
+        ul, ol {
+            text-align: left;
+            display: inline-block;
+            max-width: 800px;
+        }
+        li {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-hidden">
+
+    <!-- Botón de Inicio -->
+    <a href="index.html" class="fixed top-8 left-8 z-30 p-3 rounded-full bg-white shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-gray-100" title="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+    </a>
+
+    <div id="presentation-container" class="relative w-screen h-screen">
+
+        <!-- Diapositiva 1: Título -->
+        <div class="slide active-slide">
+            <h1 class="text-6xl font-bold mb-4 highlight">Conceptos Clave de la Programación</h1>
+            <p class="text-2xl text-gray-500 font-light">Variables, Condicionales, Bucles y Funciones</p>
+        </div>
+
+        <!-- Diapositiva 2: Los 4 Pilares -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-10">Los <strong class="highlight">4 pilares</strong> de la programación</h2>
+            <p class="text-2xl font-light max-w-4xl mb-8">Para construir cualquier programa, desde el más simple al más complejo, necesitamos dominar cuatro conceptos fundamentales.</p>
+             <div class="flex space-x-8 text-2xl font-semibold">
+                <div class="bg-white p-8 rounded-lg shadow-md">Variables</div>
+                <div class="bg-white p-8 rounded-lg shadow-md">Condicionales</div>
+                <div class="bg-white p-8 rounded-lg shadow-md">Bucles</div>
+                <div class="bg-white p-8 rounded-lg shadow-md">Funciones</div>
+             </div>
+        </div>
+        
+        <!-- Diapositiva 3: Variables -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-10">1. Las cajas de la información: <strong class="highlight">Variables</strong></h2>
+            <ul class="space-y-6 text-2xl font-light list-disc list-inside">
+                <li>Son <strong>contenedores</strong> donde guardamos datos para usarlos más tarde.</li>
+                <li>Cada variable tiene un <strong>nombre único</strong> para poder identificarla.</li>
+                <li>Pensemos en ellas como cajas etiquetadas donde guardamos un valor.</li>
+            </ul>
+        </div>
+        
+        <!-- Diapositiva 4: Ejemplo Variables -->
+        <div class="slide">
+            <h3 class="text-4xl font-bold mb-8">Ejemplo de <strong class="highlight">variables</strong></h3>
+             <p class="text-xl mb-6 font-light">Podemos guardar diferentes tipos de datos:</p>
+            <div class="grid grid-cols-2 gap-8 max-w-3xl text-left">
+                <pre class="code-block"><code>// Guardamos texto (string)
+nombre = "Ana"</code></pre>
+                 <pre class="code-block"><code>// Guardamos un número entero
+edad = 17</code></pre>
+                 <pre class="code-block"><code>// Guardamos un número decimal
+altura = 1.65</code></pre>
+                 <pre class="code-block"><code>// Guardamos un valor de verdad
+es_estudiante = verdadero</code></pre>
+            </div>
+        </div>
+
+        <!-- Diapositiva 5: Condicionales -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-6">2. Tomando decisiones: <strong class="highlight">Condicionales</strong></h2>
+            <ul class="space-y-4 text-2xl mb-8 font-light list-disc list-inside">
+                <li>Permiten que nuestro programa <strong>elija un camino</strong> u otro según se cumpla una condición.</li>
+                <li>Son la base de la <strong>lógica</strong> en la programación.</li>
+                <li>La estructura más común es <code class="inline-code">si (if)</code> ... <code class="inline-code">si no (else)</code>.</li>
+            </ul>
+             <blockquote>"Si está lloviendo, entonces coge el paraguas. Si no, coge las gafas de sol."</blockquote>
+        </div>
+
+        <!-- Diapositiva 6: Ejemplo Condicionales -->
+        <div class="slide">
+             <h3 class="text-4xl font-bold mb-8">Ejemplo de <strong class="highlight">condicional</strong></h3>
+            <p class="text-xl mb-4 font-light">Comprobamos si una persona es mayor de edad:</p>
+            <pre class="code-block"><code>edad = 17
+
+si (edad >= 18) entonces
+  mostrar "Puedes pasar"
+si no
+  mostrar "No puedes pasar, eres menor"
+fin si
+
+// Resultado: "No puedes pasar, eres menor"</code></pre>
+        </div>
+        
+        <!-- Diapositiva 7: Bucles -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-10">3. Repitiendo tareas: <strong class="highlight">Bucles</strong></h2>
+            <ul class="space-y-4 text-2xl mb-8 font-light list-disc list-inside">
+                 <li>Nos permiten <strong>ejecutar un bloque de código varias veces</strong> sin tener que reescribirlo.</li>
+                 <li>Son increíblemente útiles para procesar listas de datos o realizar acciones repetitivas.</li>
+                 <li>Los más comunes son el bucle <code class="inline-code">para (for)</code> y <code class="inline-code">mientras (while)</code>.</li>
+            </ul>
+        </div>
+        
+        <!-- Diapositiva 8: Ejemplo Bucles -->
+        <div class="slide">
+            <h3 class="text-4xl font-bold mb-8">Ejemplo de <strong class="highlight">bucle</strong></h3>
+            <p class="text-xl mb-4 font-light">Contamos del 1 al 5 usando un bucle "para":</p>
+            <pre class="code-block"><code>para i desde 1 hasta 5
+  mostrar "El número es: " + i
+fin para
+
+// Resultado:
+// El número es: 1
+// El número es: 2
+// El número es: 3
+// El número es: 4
+// El número es: 5</code></pre>
+        </div>
+        
+        <!-- Diapositiva 9: Funciones -->
+        <div class="slide">
+            <h2 class="text-5xl font-bold mb-10">4. Recetas reutilizables: <strong class="highlight">Funciones</strong></h2>
+            <ul class="space-y-5 text-2xl font-light list-disc list-inside max-w-4xl">
+                 <li>Son <strong>bloques de código con un nombre</strong> que realizan una tarea específica.</li>
+                 <li>Las creamos una vez y podemos <strong>"llamarlas" o usarlas</strong> tantas veces como queramos.</li>
+                 <li>Ayudan a <strong>organizar y simplificar</strong> nuestro programa.</li>
+            </ul>
+        </div>
+        
+        <!-- Diapositiva 10: Ejemplo Funciones -->
+        <div class="slide">
+            <h3 class="text-4xl font-bold mb-10">Ejemplo de <strong class="highlight">función</strong></h3>
+            <p class="text-xl mb-4 font-light">Creamos una función para saludar y la usamos varias veces:</p>
+            <pre class="code-block"><code>// 1. Definimos la "receta"
+función saludar(nombre)
+  mostrar "¡Hola, " + nombre + "! ¿Cómo estás?"
+fin función
+
+// 2. La usamos cuando la necesitamos
+saludar("Ana")
+saludar("Carlos")
+
+// Resultado:
+// ¡Hola, Ana! ¿Cómo estás?
+// ¡Hola, Carlos! ¿Cómo estás?</code></pre>
+        </div>
+
+        <!-- Diapositiva 11: Resumen -->
+        <div class="slide">
+             <h2 class="text-5xl font-bold mb-10">Juntando <strong class="highlight">las piezas</strong></h2>
+             <ol class="text-2xl font-light space-y-6 list-decimal list-inside">
+                <li>Usamos <strong>variables</strong> para guardar los datos.</li>
+                <li>Con <strong>condicionales</strong>, tomamos decisiones basadas en esos datos.</li>
+                <li>Con <strong>bucles</strong>, repetimos acciones sobre los datos.</li>
+                <li>Y con <strong>funciones</strong>, organizamos todo en bloques lógicos y reutilizables.</li>
+             </ol>
+        </div>
+        
+        <!-- Diapositiva 12: Preguntas -->
+        <div class="slide">
+             <h2 class="text-6xl font-bold highlight">¿Preguntas?</h2>
+        </div>
+
+    </div>
+
+    <!-- Navegación -->
+    <div class="fixed bottom-8 w-full flex justify-center items-center space-x-6 z-20">
+        <button id="prevBtn" class="nav-button font-bold py-2 px-6 rounded-full shadow-lg">Anterior</button>
+        <div id="slide-counter" class="text-sm text-gray-500 w-20 text-center"></div>
+        <button id="nextBtn" class="nav-button font-bold py-2 px-6 rounded-full shadow-lg">Siguiente</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slideCounter = document.getElementById('slide-counter');
+            let currentSlide = 0;
+
+            function showSlide(n) {
+                slides[currentSlide].classList.remove('active-slide');
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active-slide');
+                slideCounter.textContent = `${currentSlide + 1} / ${slides.length}`;
+            }
+
+            prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    showSlide(currentSlide + 1);
+                } else if (e.key === 'ArrowLeft') {
+                    showSlide(currentSlide - 1);
+                }
+            });
+
+            showSlide(0);
+        });
+    </script>
+
+</body>
+</html>
